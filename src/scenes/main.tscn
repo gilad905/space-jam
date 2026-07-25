@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://cfsty6ws2codc" path="res://scripts/camera_2d.gd" id="10_choun"]
 [ext_resource type="AudioStream" uid="uid://cjohve1vwkgg1" path="res://assets/audio/aud_spaceEngine.ogg" id="11_a8y0u"]
 [ext_resource type="AudioStream" uid="uid://du5mdwd8jqn5x" path="res://assets/audio/aud_explosion.ogg" id="11_eb6dy"]
+[ext_resource type="AudioStream" uid="uid://r31t5rrhhgc2" path="res://assets/audio/aud_forceField.ogg" id="11_jbj1t"]
 [ext_resource type="AudioStream" uid="uid://c6tqyrm4qaut3" path="res://assets/audio/aud_thrusterFire.ogg" id="11_ya4ey"]
 [ext_resource type="AudioStream" uid="uid://yfsoto5aca6p" path="res://assets/audio/aud_impact.ogg" id="13_trceg"]
 [ext_resource type="AudioStream" uid="uid://c38txp4au57xq" path="res://assets/audio/aud_win.ogg" id="15_jkv2x"]
@@ -121,6 +122,12 @@ scale = Vector2(0.41360545, 0.37142858)
 texture = ExtResource("6_tefeu")
 
 [node name="Sounds" type="Node2D" parent="." unique_id=1220822608]
+
+[node name="AudForceField" type="AudioStreamPlayer" parent="Sounds" unique_id=615511081]
+stream = ExtResource("11_jbj1t")
+volume_db = -80.0
+autoplay = true
+parameters/looping = true
 
 [node name="AudSpaceEngine" type="AudioStreamPlayer" parent="Sounds" unique_id=1974089148]
 stream = ExtResource("11_a8y0u")
