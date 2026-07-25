@@ -21,16 +21,9 @@ func _physics_process(_delta: float) -> void:
 		linear_velocity = linear_velocity.normalized() * min_speed
 
 func _on_body_entered(body: Node) -> void:
-	self.call_deferred("_freeze")
 	if body.is_in_group("walls"):
 		$"../hud/losing".visible = true
-		$"../Sounds/AudImpact".play()
-		$"../Sounds/AudExplosion".play()
-		$"../Sounds/AudThrusterFire".stop()
-		$"../Sounds/AudSpaceEngine".stop()
-		
-	elif body.is_in_group("goal"):
-		$"../hud/winning".visible = true
+		$"..".call_deferred("_restart")
 
 func _freeze() -> void:
 	freeze = true

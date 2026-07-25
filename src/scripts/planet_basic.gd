@@ -5,6 +5,5 @@ var gravity_strength: float = 150.0
 
 @onready var gravity_area: Area2D = $GravityArea
 
-
 func _ready() -> void:
 	gravity_area.gravity = gravity_strength
