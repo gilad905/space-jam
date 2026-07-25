@@ -13,7 +13,6 @@ radius = 150.0
 [node name="Planet" type="Node2D" unique_id=1218271996]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_rns43")
-gravity_strength = 70.0
 
 [node name="PlanetSprite2" type="Sprite2D" parent="." unique_id=207603033]
 position = Vector2(1.105, 0)

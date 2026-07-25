@@ -11,9 +11,9 @@ radius = 52.086468
 radius = 150.0
 
 [node name="Planet" type="Node2D" unique_id=1218271996]
+position = Vector2(1, 0)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_oq4h3")
-gravity_strength = 40.0
 
 [node name="PlanetSprite2" type="Sprite2D" parent="." unique_id=207603033]
 position = Vector2(1.105, 0)
@@ -23,9 +23,9 @@ texture = ExtResource("2_oq4h3")
 [node name="Surface" type="StaticBody2D" parent="." unique_id=1029654868 groups=["walls"]]
 position = Vector2(1, -1)
 scale = Vector2(0.49, 0.49)
-collision_layer = 2
 
 [node name="SurfaceCollision" type="CollisionShape2D" parent="Surface" unique_id=2111169886]
+visibility_layer = 2
 shape = SubResource("CircleShape2D_tn5fw")
 
 [node name="GravityArea" type="Area2D" parent="." unique_id=405075613]
