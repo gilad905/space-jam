@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://3acj8mdq4gr0"]
+
+[ext_resource type="Script" uid="uid://buvcqvv5l3732" path="res://scripts/planet_basic.gd" id="1_5pedd"]
+[ext_resource type="Texture2D" uid="uid://vv3c1mkojqfj" path="res://icon.svg" id="2_tynr2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tn5fw"]
+size = Vector2(126.5, 128)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qlois"]
+radius = 178.70926
+
+[node name="BasicPlanet" type="StaticBody2D" unique_id=1889143476]
+script = ExtResource("1_5pedd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=128835891]
+texture = ExtResource("2_tynr2")
+
+[node name="SurfaceCollision" type="CollisionShape2D" parent="." unique_id=1395370641]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_tn5fw")
+
+[node name="GravityArea" type="Node2D" parent="." unique_id=2082147419]
+
+[node name="GravityCollision" type="CollisionShape2D" parent="GravityArea" unique_id=1579666006]
+position = Vector2(1, -2)
+shape = SubResource("CircleShape2D_qlois")
