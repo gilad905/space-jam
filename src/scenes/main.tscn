@@ -1,29 +1,43 @@
 [gd_scene format=3 uid="uid://botbg0dvqqbyk"]
 
 [ext_resource type="Script" uid="uid://dq3751chexi04" path="res://scripts/player.gd" id="1_0wfyh"]
+[ext_resource type="Script" uid="uid://i43wb1l1dspn" path="res://scripts/main.gd" id="1_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://bpk8jle8p5bx2" path="res://assets/spaceRockets_001.png" id="2_sugp2"]
 [ext_resource type="Texture2D" uid="uid://b4l4niem3upbv" path="res://assets/planet02.png" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://3acj8mdq4gr0" path="res://scenes/planets/Planet_Basic.tscn" id="4_jyhfs"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qw2ki"]
-size = Vector2(49, 99)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sugp2"]
+radius = 6.0
+height = 76.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jyhfs"]
+radius = 12.0
+height = 40.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qw2ki"]
 radius = 50.27
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iy7yg"]
+
 [node name="Main" type="Node2D" unique_id=62847045]
+script = ExtResource("1_jyhfs")
 
 [node name="Player" type="RigidBody2D" parent="." unique_id=1514733619]
 position = Vector2(89, 344)
 rotation = 1.5707964
-linear_velocity = Vector2(150, 0)
+linear_damp = 10.0
 script = ExtResource("1_0wfyh")
+forward_force = 600.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1907273118]
-shape = SubResource("RectangleShape2D_qw2ki")
+shape = SubResource("CapsuleShape2D_sugp2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player" unique_id=531579884]
+position = Vector2(0, 18)
+shape = SubResource("CapsuleShape2D_jyhfs")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=683488736]
-position = Vector2(3.9999695, 4)
+position = Vector2(0, -2)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_sugp2")
 
@@ -36,6 +50,3 @@ shape = SubResource("CircleShape2D_qw2ki")
 [node name="Sprite2D" type="Sprite2D" parent="Goal" unique_id=505986330]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_jyhfs")
-
-[node name="Planet" parent="." unique_id=1218271996 instance=ExtResource("4_jyhfs")]
-position = Vector2(492, 141)
