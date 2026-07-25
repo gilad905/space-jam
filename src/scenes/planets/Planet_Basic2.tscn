@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://biat38yx461ya"]
+[gd_scene format=3 uid="uid://rfy78v3wpwpy"]
 
 [ext_resource type="Script" uid="uid://djan4ecmasfhm" path="res://scripts/planet_basic.gd" id="1_iurgk"]
 [ext_resource type="Texture2D" uid="uid://dj5lf7efhjcb6" path="res://assets/planet00.png" id="2_7tmba"]

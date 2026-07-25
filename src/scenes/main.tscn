@@ -4,6 +4,14 @@
 [ext_resource type="Script" uid="uid://i43wb1l1dspn" path="res://scripts/main.gd" id="1_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://bpk8jle8p5bx2" path="res://assets/spaceRockets_001.png" id="2_sugp2"]
 [ext_resource type="Texture2D" uid="uid://b4l4niem3upbv" path="res://assets/planet02.png" id="3_jyhfs"]
+<<<<<<< HEAD
+=======
+[ext_resource type="PackedScene" uid="uid://rfy78v3wpwpy" path="res://scenes/planets/Planet_Basic.tscn" id="4_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://bptpuwsy0lsfh" path="res://assets/winning_image.jpg" id="6_tefeu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qw2ki"]
+radius = 50.27
+>>>>>>> 35df8879b2ff537f7df88547814928df0de968bb
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sugp2"]
 radius = 6.0
