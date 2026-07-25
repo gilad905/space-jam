@@ -37,5 +37,5 @@ shape = SubResource("CircleShape2D_qw2ki")
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_jyhfs")
 
-[node name="BasicPlanet" parent="." unique_id=1889143476 instance=ExtResource("4_jyhfs")]
-position = Vector2(535, 232)
+[node name="Planet" parent="." unique_id=1218271996 instance=ExtResource("4_jyhfs")]
+position = Vector2(492, 141)
