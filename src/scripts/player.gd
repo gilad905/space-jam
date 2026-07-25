@@ -24,6 +24,11 @@ func _on_body_entered(body: Node) -> void:
 	self.call_deferred("_freeze")
 	if body.is_in_group("walls"):
 		$"../hud/losing".visible = true
+		$"../Sounds/AudImpact".play()
+		$"../Sounds/AudExplosion".play()
+		$"../Sounds/AudThrusterFire".stop()
+		$"../Sounds/AudSpaceEngine".stop()
+		
 	elif body.is_in_group("goal"):
 		$"../hud/winning".visible = true
 
