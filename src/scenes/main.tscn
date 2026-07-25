@@ -47,6 +47,8 @@ rotation = 1.5707964
 scale = Vector2(1.0552735, 1.0552735)
 texture = ExtResource("17_muem4")
 
+[node name="Planets" type="Node2D" parent="." unique_id=1701217212]
+
 [node name="Goal" type="Area2D" parent="." unique_id=1630456284 groups=["walls"]]
 position = Vector2(2533, 364)
 collision_layer = 4
@@ -57,17 +59,6 @@ shape = SubResource("CircleShape2D_qw2ki")
 [node name="Sprite2D" type="Sprite2D" parent="Goal" unique_id=505986330]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_jyhfs")
-
-[node name="Planets" type="Node2D" parent="." unique_id=1178352443]
-
-[node name="PlanetSmall" parent="Planets" unique_id=1218271996 instance=ExtResource("3_85g3d")]
-position = Vector2(1003, 480)
-
-[node name="PlanetBasic" parent="Planets" unique_id=1172395948 instance=ExtResource("4_jyhfs")]
-position = Vector2(395, 212)
-
-[node name="PlanetMedium" parent="Planets" unique_id=1138865533 instance=ExtResource("5_choun")]
-position = Vector2(1412, 223)
 
 [node name="Player" type="RigidBody2D" parent="." unique_id=1514733619 groups=["player"]]
 position = Vector2(89, 344)

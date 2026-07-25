@@ -27,8 +27,18 @@ var max_attempts_per_planet: int = 100
 
 var random := RandomNumberGenerator.new()
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("exit"):
+		get_tree().quit()
+
 
 func _ready() -> void:
+	if not InputMap.has_action("exit"):
+		InputMap.add_action("exit")
+		var ev := InputEventKey.new()
+		ev.physical_keycode = KEY_ESCAPE
+		InputMap.action_add_event("exit", ev)
+
 	random.randomize()
 
 	# Wait until the physics world is available.

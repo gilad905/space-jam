@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cis1locql4rfs"]
+
+[ext_resource type="PackedScene" uid="uid://3acj8mdq4gr0" path="res://scenes/planets/PlanetSmall.tscn" id="1_ncoji"]
+[ext_resource type="PackedScene" uid="uid://rfy78v3wpwpy" path="res://scenes/planets/Planet_Basic2.tscn" id="2_8j55i"]
+[ext_resource type="PackedScene" uid="uid://cacdsp4wye3tb" path="res://scenes/planets/Planet_Medium.tscn" id="3_e7l5m"]
+
+[node name="Planets" type="Node2D" unique_id=1287425163]
+
+[node name="PlanetSmall" parent="." unique_id=1218271996 instance=ExtResource("1_ncoji")]
+position = Vector2(1003, 480)
+
+[node name="PlanetBasic" parent="." unique_id=1183610529 instance=ExtResource("2_8j55i")]
+position = Vector2(395, 212)
+
+[node name="PlanetMedium" parent="." unique_id=884529189 instance=ExtResource("3_e7l5m")]
+position = Vector2(1412, 223)
