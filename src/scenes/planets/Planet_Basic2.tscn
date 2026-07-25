@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://djan4ecmasfhm" path="res://scripts/planet_basic.gd" id="1_iurgk"]
 [ext_resource type="Texture2D" uid="uid://dj5lf7efhjcb6" path="res://assets/planet00.png" id="2_7tmba"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_tn5fw"]
+radius = 52.34
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_qlois"]
 radius = 150.0
 
@@ -15,27 +18,20 @@ gradient = SubResource("Gradient_iurgk")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_tn5fw"]
-radius = 52.34
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_qlois"]
-radius = 150.0
-
 [node name="Planet" type="Node2D" unique_id=1218271996]
 scale = Vector2(2.035, 2.035)
 script = ExtResource("1_iurgk")
 gravity_strength = 500.0
-
-[node name="PlanetSprite2" type="Sprite2D" parent="." unique_id=207603033]
-position = Vector2(1.105, 0)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_7tmba")
 
 [node name="Surface" type="StaticBody2D" parent="." unique_id=1029654868 groups=["walls"]]
 position = Vector2(1, -1)
 collision_layer = 2
 
 [node name="SurfaceCollision" type="CollisionShape2D" parent="Surface" unique_id=2111169886]
+shape = SubResource("CircleShape2D_tn5fw")
+
+[node name="SurfaceCollision2" type="CollisionShape2D" parent="Surface" unique_id=648679070]
+visible = false
 shape = SubResource("CircleShape2D_tn5fw")
 
 [node name="GravityArea" type="Area2D" parent="." unique_id=405075613]
@@ -56,15 +52,7 @@ position = Vector2(0.4999962, 3.4999847)
 scale = Vector2(4.734375, 4.7343745)
 texture = SubResource("GradientTexture2D_7tmba")
 
-[node name="Surface" type="StaticBody2D" parent="." unique_id=1029654868 groups=["walls"]]
-position = Vector2(1, -1)
-collision_layer = 2
-
-[node name="SurfaceCollision" type="CollisionShape2D" parent="Surface" unique_id=2111169886]
-visible = false
-shape = SubResource("CircleShape2D_tn5fw")
-
-[node name="PlanetSprite2" type="Sprite2D" parent="Surface" unique_id=207603033]
-position = Vector2(0.10500002, 1)
+[node name="PlanetSprite2" type="Sprite2D" parent="." unique_id=207603033]
+position = Vector2(1.105, 0)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_7tmba")
