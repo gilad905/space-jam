@@ -23,7 +23,7 @@ height = 40.0
 [node name="Main" type="Node2D" unique_id=62847045]
 script = ExtResource("1_jyhfs")
 
-[node name="Goal" type="Area2D" parent="." unique_id=1630456284]
+[node name="Goal" type="Area2D" parent="." unique_id=1630456284 groups=["walls"]]
 position = Vector2(1087, 345)
 collision_layer = 4
 
@@ -40,10 +40,12 @@ position = Vector2(1087, 345)
 [node name="Planet" parent="Planets" unique_id=1218271996 instance=ExtResource("4_jyhfs")]
 position = Vector2(-675, -116)
 
-[node name="Player" type="RigidBody2D" parent="." unique_id=1514733619]
+[node name="Player" type="RigidBody2D" parent="." unique_id=1514733619 groups=["player"]]
 position = Vector2(89, 344)
 rotation = 1.5707964
 collision_mask = 6
+contact_monitor = true
+max_contacts_reported = 1
 script = ExtResource("1_0wfyh")
 max_speed = 200.0
 
@@ -77,9 +79,26 @@ scale = Vector2(0.41360545, 0.37142858)
 texture = ExtResource("6_tefeu")
 
 [node name="boundaries" type="Area2D" parent="." unique_id=197040172]
+collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="boundaries" unique_id=658337280]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boundaries" unique_id=658337280 groups=["walls"]]
 position = Vector2(592, 645)
 shape = SubResource("WorldBoundaryShape2D_iy7yg")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="boundaries" unique_id=1562875736 groups=["walls"]]
+position = Vector2(592, 0)
+rotation = 3.1415927
+shape = SubResource("WorldBoundaryShape2D_iy7yg")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="boundaries" unique_id=28897620 groups=["walls"]]
+position = Vector2(0, 342)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_iy7yg")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="boundaries" unique_id=1890001498 groups=["walls"]]
+position = Vector2(1153, 354)
+rotation = -1.5707964
+shape = SubResource("WorldBoundaryShape2D_iy7yg")
+
+[connection signal="body_entered" from="Goal" to="." method="_on_goal_body_entered"]
 [connection signal="body_entered" from="Player" to="Player" method="_on_body_entered"]
