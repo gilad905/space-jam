@@ -12,7 +12,7 @@ func _physics_process(_delta) -> void:
 	#var forward_vector := Vector2.UP.rotated(rotation)
 	#apply_central_force(forward_vector * forward_thrust)
 
-	var side_input := Input.get_axis("ui_left", "ui_right") # returns -1.0, 0.0, or 1.0
+	var side_input := Input.get_axis("ui_up", "ui_down") # returns -1.0, 0.0, or 1.0
 	if side_input != 0.0:
-		var right_dir := Vector2.DOWN.rotated(rotation)
+		var right_dir := Vector2.RIGHT.rotated(rotation)
 		apply_central_force(right_dir * side_input * strafe_force)
