@@ -16,7 +16,7 @@ func _physics_process(_delta: float) -> void:
 	apply_central_force(forward_dir * forward_force)
 	
 	# 2. Rotational torque based on side inputs (A/D or Left/Right)
-	var turn_input := Input.get_axis("ui_left", "ui_right") # -1.0 (left), 1.0 (right)
+	var turn_input := Input.get_axis("left", "right") # -1.0 (left), 1.0 (right)
 	if turn_input != 0.0:
 		apply_torque(turn_input * turn_torque)
 
