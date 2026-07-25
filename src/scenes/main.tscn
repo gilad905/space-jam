@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://c6tqyrm4qaut3" path="res://assets/audio/aud_thrusterFire.ogg" id="11_ya4ey"]
 [ext_resource type="AudioStream" uid="uid://yfsoto5aca6p" path="res://assets/audio/aud_impact.ogg" id="13_trceg"]
 [ext_resource type="AudioStream" uid="uid://c38txp4au57xq" path="res://assets/audio/aud_win.ogg" id="15_jkv2x"]
+[ext_resource type="Texture2D" uid="uid://bary6vlhbnw17" path="res://assets/outer_sky.jpg" id="17_muem4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qw2ki"]
 radius = 50.27
@@ -40,6 +41,12 @@ planet_scenes = Array[PackedScene]([ExtResource("3_85g3d"), ExtResource("5_choun
 map_size = Vector2(3000, 3000)
 planet_count = 20
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1874850161]
+position = Vector2(1320.4314, 1208.6802)
+rotation = 1.5707964
+scale = Vector2(1.0552735, 1.0552735)
+texture = ExtResource("17_muem4")
+
 [node name="Goal" type="Area2D" parent="." unique_id=1630456284 groups=["walls"]]
 position = Vector2(2533, 364)
 collision_layer = 4
@@ -53,13 +60,13 @@ texture = ExtResource("3_jyhfs")
 
 [node name="Planets" type="Node2D" parent="." unique_id=1178352443]
 
-[node name="Planet2" parent="Planets" unique_id=1218271996 instance=ExtResource("3_85g3d")]
+[node name="PlanetSmall" parent="Planets" unique_id=1218271996 instance=ExtResource("3_85g3d")]
 position = Vector2(1003, 480)
 
-[node name="Planet" parent="Planets" unique_id=1172395948 instance=ExtResource("4_jyhfs")]
+[node name="PlanetBasic" parent="Planets" unique_id=1172395948 instance=ExtResource("4_jyhfs")]
 position = Vector2(395, 212)
 
-[node name="Planet3" parent="Planets" unique_id=1138865533 instance=ExtResource("5_choun")]
+[node name="PlanetMedium" parent="Planets" unique_id=1138865533 instance=ExtResource("5_choun")]
 position = Vector2(1412, 223)
 
 [node name="Player" type="RigidBody2D" parent="." unique_id=1514733619 groups=["player"]]
