@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://rfy78v3wpwpy"]
 
-[ext_resource type="Script" uid="uid://djan4ecmasfhm" path="res://scripts/planet_basic.gd" id="1_5pedd"]
-[ext_resource type="Texture2D" uid="uid://dj5lf7efhjcb6" path="res://assets/planet00.png" id="1_jtm2a"]
+[ext_resource type="Script" uid="uid://djan4ecmasfhm" path="res://scripts/planet_basic.gd" id="1_iurgk"]
+[ext_resource type="Texture2D" uid="uid://dj5lf7efhjcb6" path="res://assets/planet00.png" id="2_7tmba"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tn5fw"]
 radius = 52.086468
@@ -10,13 +10,13 @@ radius = 52.086468
 radius = 150.0
 
 [node name="Planet" type="Node2D" unique_id=1218271996]
-script = ExtResource("1_5pedd")
+script = ExtResource("1_iurgk")
 gravity_strength = 80.0
 
 [node name="PlanetSprite2" type="Sprite2D" parent="." unique_id=207603033]
 position = Vector2(1.105, 0)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_jtm2a")
+texture = ExtResource("2_7tmba")
 
 [node name="Surface" type="StaticBody2D" parent="." unique_id=1029654868 groups=["walls"]]
 position = Vector2(1, -1)
@@ -44,4 +44,4 @@ self_modulate = Color(1, 1, 1, 0.11764706)
 z_index = -2
 position = Vector2(1.105, 10.000002)
 scale = Vector2(0.295, 0.268)
-texture = ExtResource("1_jtm2a")
+texture = ExtResource("2_7tmba")
