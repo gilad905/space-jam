@@ -5,12 +5,7 @@ extends RigidBody2D
 @export var min_speed: float = 100.0
 @export var max_speed: float = 400.0
 
-var stopped: bool = false
-
 func _physics_process(_delta: float) -> void:
-	if stopped:
-		return
-
 	# 1. Constant forward thrust along local UP
 	var forward_dir := Vector2.UP.rotated(rotation)
 	apply_central_force(forward_dir * forward_force)
@@ -26,9 +21,13 @@ func _physics_process(_delta: float) -> void:
 		linear_velocity = linear_velocity.normalized() * min_speed
 
 func _on_body_entered(body: Node) -> void:
+	self.call_deferred("_freeze")
 	if body.is_in_group("walls"):
-		stopped = true
 		$"../hud/losing".visible = true
 	elif body.is_in_group("goal"):
-		stopped = true
 		$"../hud/winning".visible = true
+
+func _freeze() -> void:
+	freeze = true
+	linear_velocity = Vector2.ZERO
+	angular_velocity = 0

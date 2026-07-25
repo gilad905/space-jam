@@ -22,6 +22,12 @@ height = 54.0
 radius = 9.0
 height = 28.0
 
+[sub_resource type="Gradient" id="Gradient_choun"]
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_iy7yg"]
+gradient = SubResource("Gradient_choun")
+
 [node name="Main" type="Node2D" unique_id=62847045]
 script = ExtResource("1_jyhfs")
 
@@ -72,24 +78,48 @@ texture = ExtResource("2_sugp2")
 [node name="boundaries" type="Area2D" parent="." unique_id=197040172]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="boundaries" unique_id=658337280 groups=["walls"]]
-position = Vector2(592, 645)
+[node name="boundryBottom" type="CollisionShape2D" parent="boundaries" unique_id=658337280 groups=["walls"]]
+position = Vector2(1753, 2389)
 shape = ExtResource("7_o6xl0")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="boundaries" unique_id=1562875736 groups=["walls"]]
+[node name="Sprite2D" type="Sprite2D" parent="boundaries/boundryBottom" unique_id=1342861103]
+position = Vector2(1409, -10)
+rotation = 1.5707964
+scale = Vector2(1.344, 102.25)
+texture = SubResource("GradientTexture2D_iy7yg")
+
+[node name="boundryTop" type="CollisionShape2D" parent="boundaries" unique_id=1562875736 groups=["walls"]]
 position = Vector2(592, 0)
 rotation = 3.1415927
 shape = ExtResource("7_o6xl0")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="boundaries" unique_id=28897620 groups=["walls"]]
+[node name="Sprite2D" type="Sprite2D" parent="boundaries/boundryTop" unique_id=814328221]
+position = Vector2(-2208.9998, -13.999805)
+rotation = -1.5707964
+scale = Vector2(0.344, 108.25)
+texture = SubResource("GradientTexture2D_iy7yg")
+
+[node name="boundryLeft" type="CollisionShape2D" parent="boundaries" unique_id=28897620 groups=["walls"]]
 position = Vector2(0, 342)
 rotation = 1.5707964
 shape = ExtResource("7_o6xl0")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="boundaries" unique_id=1890001498 groups=["walls"]]
+[node name="Sprite2D" type="Sprite2D" parent="boundaries/boundryLeft" unique_id=647446905]
+position = Vector2(-1133.0001, 20.000046)
+rotation = -1.5707964
+scale = Vector2(0.344, 108.25)
+texture = SubResource("GradientTexture2D_iy7yg")
+
+[node name="boundryRight" type="CollisionShape2D" parent="boundaries" unique_id=1890001498 groups=["walls"]]
 position = Vector2(2700, 314)
 rotation = -1.5707964
 shape = ExtResource("7_o6xl0")
+
+[node name="Sprite2D" type="Sprite2D" parent="boundaries/boundryRight" unique_id=301755507]
+position = Vector2(-2208.9998, -13.999805)
+rotation = -1.5707964
+scale = Vector2(0.344, 108.25)
+texture = SubResource("GradientTexture2D_iy7yg")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=418571327]
 position = Vector2(592, 314)
