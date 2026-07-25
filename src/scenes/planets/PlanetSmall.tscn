@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://djan4ecmasfhm" path="res://scripts/planet_basic.gd" id="1_oq4h3"]
 [ext_resource type="Texture2D" uid="uid://cpqu0asht0xwh" path="res://assets/planet09.png" id="2_oq4h3"]
-[ext_resource type="Texture2D" uid="uid://dj5lf7efhjcb6" path="res://assets/planet00.png" id="3_dm5rm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tn5fw"]
 radius = 52.086468
@@ -10,18 +9,21 @@ radius = 52.086468
 [sub_resource type="CircleShape2D" id="CircleShape2D_qlois"]
 radius = 150.0
 
+[sub_resource type="Gradient" id="Gradient_rjocx"]
+offsets = PackedFloat32Array(0.22020726, 0.5699482)
+colors = PackedColorArray(0.60784316, 0.23137255, 0.49803922, 1, 0.60784316, 0.23137255, 0.49803922, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_muem4"]
+gradient = SubResource("Gradient_rjocx")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="Planet" type="Node2D" unique_id=1218271996]
 scale = Vector2(0.715, 0.715)
 script = ExtResource("1_oq4h3")
 gravity_strength = 150.0
 
-[node name="PlanetSprite2" type="Sprite2D" parent="." unique_id=207603033]
-position = Vector2(1.105, 0)
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("2_oq4h3")
-
 [node name="Surface" type="StaticBody2D" parent="." unique_id=1029654868 groups=["walls"]]
-position = Vector2(1, -1)
 scale = Vector2(0.49, 0.49)
 
 [node name="SurfaceCollision" type="CollisionShape2D" parent="Surface" unique_id=2111169886]
@@ -39,13 +41,13 @@ gravity_direction = Vector2(0, 0)
 gravity = 50.0
 
 [node name="GravityCollision" type="CollisionShape2D" parent="GravityArea" unique_id=1579666006]
-position = Vector2(1, 7)
+visible = false
 shape = SubResource("CircleShape2D_qlois")
 
 [node name="PlanetSprite3" type="Sprite2D" parent="GravityArea" unique_id=2000859241]
-modulate = Color(0.003921569, 0.003921569, 0.003921569, 1)
-self_modulate = Color(1, 1, 1, 0.11764706)
-z_index = -2
-position = Vector2(1.105, 10.000002)
-scale = Vector2(0.324, 0.3)
-texture = ExtResource("3_dm5rm")
+scale = Vector2(5.8401637, 5.7377048)
+texture = SubResource("GradientTexture2D_muem4")
+
+[node name="PlanetSprite2" type="Sprite2D" parent="." unique_id=207603033]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_oq4h3")

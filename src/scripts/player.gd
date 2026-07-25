@@ -22,8 +22,7 @@ func _physics_process(_delta: float) -> void:
 
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("walls"):
-		$"../hud/losing".visible = true
-		$"..".call_deferred("_restart")
+		$"..".call_deferred("crash")
 
 func _freeze() -> void:
 	freeze = true
