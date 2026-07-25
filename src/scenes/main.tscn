@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://i43wb1l1dspn" path="res://scripts/main.gd" id="1_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://bpk8jle8p5bx2" path="res://assets/spaceRockets_001.png" id="2_sugp2"]
 [ext_resource type="Texture2D" uid="uid://b4l4niem3upbv" path="res://assets/planet02.png" id="3_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://3acj8mdq4gr0" path="res://scenes/planets/Planet_Basic.tscn" id="4_jyhfs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qw2ki"]
 size = Vector2(49, 99)
@@ -39,3 +40,6 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_jyhfs")
 
 [connection signal="body_entered" from="Goal" to="." method="_on_goal_body_entered"]
+
+[node name="BasicPlanet" parent="." unique_id=1889143476 instance=ExtResource("4_jyhfs")]
+position = Vector2(535, 232)
