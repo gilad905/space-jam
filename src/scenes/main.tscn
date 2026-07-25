@@ -4,6 +4,10 @@
 [ext_resource type="Script" uid="uid://i43wb1l1dspn" path="res://scripts/main.gd" id="1_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://bpk8jle8p5bx2" path="res://assets/spaceRockets_001.png" id="2_sugp2"]
 [ext_resource type="Texture2D" uid="uid://b4l4niem3upbv" path="res://assets/planet02.png" id="3_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://rfy78v3wpwpy" path="res://scenes/planets/Planet_Basic.tscn" id="4_jyhfs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qw2ki"]
+radius = 50.27
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sugp2"]
 radius = 6.0
@@ -13,18 +17,41 @@ height = 76.0
 radius = 12.0
 height = 40.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qw2ki"]
-radius = 50.27
-
 [node name="Main" type="Node2D" unique_id=62847045]
 script = ExtResource("1_jyhfs")
+
+[node name="Goal" type="Area2D" parent="." unique_id=1630456284]
+position = Vector2(1087, 345)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal" unique_id=756902463]
+shape = SubResource("CircleShape2D_qw2ki")
+
+[node name="Sprite2D" type="Sprite2D" parent="Goal" unique_id=505986330]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_jyhfs")
+
+[node name="losing" type="Label" parent="." unique_id=696237446]
+visible = false
+offset_left = 407.0
+offset_top = 314.0
+offset_right = 694.0
+offset_bottom = 369.0
+theme_override_font_sizes/font_size = 40
+text = "YOU CRASHED!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Planets" type="Node2D" parent="." unique_id=1178352443]
+position = Vector2(1087, 345)
+
+[node name="Planet" parent="Planets" unique_id=1218271996 instance=ExtResource("4_jyhfs")]
+position = Vector2(-675, -116)
 
 [node name="Player" type="RigidBody2D" parent="." unique_id=1514733619]
 position = Vector2(89, 344)
 rotation = 1.5707964
-linear_damp = 10.0
 script = ExtResource("1_0wfyh")
-forward_force = 600.0
+max_speed = 200.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1907273118]
 shape = SubResource("CapsuleShape2D_sugp2")
@@ -37,26 +64,5 @@ shape = SubResource("CapsuleShape2D_jyhfs")
 position = Vector2(0, -2)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_sugp2")
-
-[node name="Goal" type="Area2D" parent="." unique_id=1630456284]
-position = Vector2(1087, 345)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal" unique_id=756902463]
-shape = SubResource("CircleShape2D_qw2ki")
-
-[node name="Sprite2D" type="Sprite2D" parent="Goal" unique_id=505986330]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("3_jyhfs")
-
-[node name="LabelCrashed" type="Label" parent="." unique_id=696237446]
-visible = false
-offset_left = 407.0
-offset_top = 314.0
-offset_right = 694.0
-offset_bottom = 369.0
-theme_override_font_sizes/font_size = 40
-text = "YOU CRASHED!"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [connection signal="body_entered" from="Player" to="Player" method="_on_body_entered"]
