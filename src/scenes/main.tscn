@@ -4,11 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://bpk8jle8p5bx2" path="res://assets/spaceRockets_001.png" id="2_sugp2"]
 [ext_resource type="Texture2D" uid="uid://b4l4niem3upbv" path="res://assets/planet02.png" id="3_jyhfs"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qw2ki"]
-size = Vector2(49, 99)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sugp2"]
+radius = 6.0
+height = 76.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jyhfs"]
+radius = 12.0
+height = 40.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qw2ki"]
 radius = 50.27
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iy7yg"]
 
 [node name="Main" type="Node2D" unique_id=62847045]
 
@@ -19,10 +26,14 @@ linear_velocity = Vector2(150, 0)
 script = ExtResource("1_0wfyh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1907273118]
-shape = SubResource("RectangleShape2D_qw2ki")
+shape = SubResource("CapsuleShape2D_sugp2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player" unique_id=531579884]
+position = Vector2(0, 18)
+shape = SubResource("CapsuleShape2D_jyhfs")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=683488736]
-position = Vector2(3.9999695, 4)
+position = Vector2(0, -2)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_sugp2")
 
@@ -35,3 +46,24 @@ shape = SubResource("CircleShape2D_qw2ki")
 [node name="Sprite2D" type="Sprite2D" parent="Goal" unique_id=505986330]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_jyhfs")
+
+[node name="Boundaries" type="Area2D" parent="." unique_id=1506035510]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries" unique_id=677202935]
+position = Vector2(0, 350)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_iy7yg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundaries" unique_id=1586130751]
+position = Vector2(550, 0)
+rotation = 3.1415927
+shape = SubResource("WorldBoundaryShape2D_iy7yg")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Boundaries" unique_id=1871258506]
+position = Vector2(1150, 350)
+rotation = -1.5707964
+shape = SubResource("WorldBoundaryShape2D_iy7yg")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Boundaries" unique_id=1212161584]
+position = Vector2(550, 650)
+shape = SubResource("WorldBoundaryShape2D_iy7yg")
