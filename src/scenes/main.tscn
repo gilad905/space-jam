@@ -10,8 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://bptpuwsy0lsfh" path="res://assets/winning_image.jpg" id="6_tefeu"]
 [ext_resource type="Shape2D" uid="uid://32yvf74jr5qd" path="res://new_world_boundary_shape_2d.tres" id="7_o6xl0"]
 [ext_resource type="Script" uid="uid://cfsty6ws2codc" path="res://scripts/camera_2d.gd" id="10_choun"]
+[ext_resource type="AudioStream" uid="uid://cjohve1vwkgg1" path="res://assets/audio/aud_spaceEngine.ogg" id="11_a8y0u"]
 [ext_resource type="AudioStream" uid="uid://du5mdwd8jqn5x" path="res://assets/audio/aud_explosion.ogg" id="11_eb6dy"]
 [ext_resource type="AudioStream" uid="uid://c6tqyrm4qaut3" path="res://assets/audio/aud_thrusterFire.ogg" id="11_ya4ey"]
+[ext_resource type="AudioStream" uid="uid://yfsoto5aca6p" path="res://assets/audio/aud_impact.ogg" id="13_trceg"]
+[ext_resource type="AudioStream" uid="uid://c38txp4au57xq" path="res://assets/audio/aud_win.ogg" id="15_jkv2x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qw2ki"]
 radius = 50.27
@@ -119,6 +122,11 @@ texture = ExtResource("6_tefeu")
 
 [node name="Sounds" type="Node2D" parent="." unique_id=1220822608]
 
+[node name="AudSpaceEngine" type="AudioStreamPlayer" parent="Sounds" unique_id=1974089148]
+stream = ExtResource("11_a8y0u")
+autoplay = true
+parameters/looping = true
+
 [node name="AudExplosion" type="AudioStreamPlayer" parent="Sounds" unique_id=1299265715]
 stream = ExtResource("11_eb6dy")
 
@@ -126,6 +134,12 @@ stream = ExtResource("11_eb6dy")
 stream = ExtResource("11_ya4ey")
 autoplay = true
 parameters/looping = true
+
+[node name="AudImpact" type="AudioStreamPlayer" parent="Sounds" unique_id=1288616289]
+stream = ExtResource("13_trceg")
+
+[node name="AudWin" type="AudioStreamPlayer" parent="Sounds" unique_id=577077525]
+stream = ExtResource("15_jkv2x")
 
 [connection signal="body_entered" from="Goal" to="." method="_on_goal_body_entered"]
 [connection signal="body_entered" from="Player" to="Player" method="_on_body_entered"]
