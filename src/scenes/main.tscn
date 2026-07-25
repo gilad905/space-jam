@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dq3751chexi04" path="res://scripts/player.gd" id="1_0wfyh"]
 [ext_resource type="Texture2D" uid="uid://bpk8jle8p5bx2" path="res://assets/spaceRockets_001.png" id="2_sugp2"]
 [ext_resource type="Texture2D" uid="uid://b4l4niem3upbv" path="res://assets/planet02.png" id="3_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://3acj8mdq4gr0" path="res://scenes/planets/Planet_Basic.tscn" id="4_jyhfs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qw2ki"]
 size = Vector2(49, 99)
@@ -33,3 +34,6 @@ shape = SubResource("CircleShape2D_qw2ki")
 [node name="Sprite2D" type="Sprite2D" parent="Goal" unique_id=505986330]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_jyhfs")
+
+[node name="BasicPlanet" parent="." unique_id=1889143476 instance=ExtResource("4_jyhfs")]
+position = Vector2(535, 232)
