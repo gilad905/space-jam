@@ -25,7 +25,7 @@ shape = SubResource("RectangleShape2D_qw2ki")
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_sugp2")
 
-[node name="Goal" type="StaticBody2D" parent="." unique_id=1993862168]
+[node name="Goal" type="Area2D" parent="." unique_id=1630456284]
 position = Vector2(1087, 345)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Goal" unique_id=756902463]
