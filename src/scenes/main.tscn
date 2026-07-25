@@ -37,6 +37,8 @@ gradient = SubResource("Gradient_choun")
 [node name="Main" type="Node2D" unique_id=62847045]
 script = ExtResource("1_jyhfs")
 planet_scenes = Array[PackedScene]([ExtResource("3_85g3d"), ExtResource("5_choun"), ExtResource("4_jyhfs")])
+map_size = Vector2(3000, 3000)
+planet_count = 20
 
 [node name="Goal" type="Area2D" parent="." unique_id=1630456284 groups=["walls"]]
 position = Vector2(2533, 364)
