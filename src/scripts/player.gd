@@ -29,6 +29,11 @@ func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("walls"):
 		stopped = true
 		$"../hud/losing".visible = true
+		$"../Sounds/AudImpact".play()
+		$"../Sounds/AudExplosion".play()
+		$"../Sounds/AudThrusterFire".stop()
+		$"../Sounds/AudSpaceEngine".stop()
+		
 	elif body.is_in_group("goal"):
 		stopped = true
 		$"../hud/winning".visible = true
