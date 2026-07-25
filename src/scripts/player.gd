@@ -28,7 +28,7 @@ func _physics_process(_delta: float) -> void:
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("walls"):
 		stopped = true
-		$"../losing".visible = true
+		$"../hud/losing".visible = true
 	elif body.is_in_group("goal"):
 		stopped = true
-		$"../winning".visible = true
+		$"../hud/winning".visible = true

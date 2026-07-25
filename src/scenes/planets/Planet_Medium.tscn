@@ -20,7 +20,7 @@ position = Vector2(1.105, 0)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_bfcn3")
 
-[node name="Surface" type="StaticBody2D" parent="." unique_id=1029654868]
+[node name="Surface" type="StaticBody2D" parent="." unique_id=1029654868 groups=["walls"]]
 position = Vector2(1, -1)
 collision_layer = 2
 
