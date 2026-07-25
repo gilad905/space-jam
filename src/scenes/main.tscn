@@ -8,8 +8,9 @@ size = Vector2(49, 99)
 
 [node name="Main" type="Node2D" unique_id=62847045]
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=157771189]
-position = Vector2(525, 386)
+[node name="Player" type="RigidBody2D" parent="." unique_id=1514733619]
+position = Vector2(89, 344)
+linear_velocity = Vector2(150, 0)
 script = ExtResource("1_0wfyh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1907273118]
