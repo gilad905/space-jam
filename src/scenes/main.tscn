@@ -51,15 +51,6 @@ texture = ExtResource("3_jyhfs")
 
 [node name="Planets" type="Node2D" parent="." unique_id=1178352443]
 
-[node name="Planet2" parent="Planets" unique_id=1218271996 instance=ExtResource("3_85g3d")]
-position = Vector2(1003, 480)
-
-[node name="Planet" parent="Planets" unique_id=1172395948 instance=ExtResource("4_jyhfs")]
-position = Vector2(395, 212)
-
-[node name="Planet3" parent="Planets" unique_id=1138865533 instance=ExtResource("5_choun")]
-position = Vector2(1412, 223)
-
 [node name="Player" type="RigidBody2D" parent="." unique_id=1514733619 groups=["player"]]
 position = Vector2(89, 344)
 rotation = 1.5707964
@@ -68,6 +59,7 @@ contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_0wfyh")
 forward_force = 600.0
+max_speed = 250.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1907273118]
 position = Vector2(0, -2)

@@ -11,9 +11,9 @@ radius = 52.086468
 radius = 150.0
 
 [node name="Planet" type="Node2D" unique_id=1218271996]
-position = Vector2(1, 0)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.715, 0.715)
 script = ExtResource("1_oq4h3")
+gravity_strength = 150.0
 
 [node name="PlanetSprite2" type="Sprite2D" parent="." unique_id=207603033]
 position = Vector2(1.105, 0)
@@ -29,7 +29,7 @@ visibility_layer = 2
 shape = SubResource("CircleShape2D_tn5fw")
 
 [node name="GravityArea" type="Area2D" parent="." unique_id=405075613]
-scale = Vector2(0.61, 0.61)
+scale = Vector2(1.11, 1.11)
 collision_layer = 4
 gravity_space_override = 1
 gravity_point = true
