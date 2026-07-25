@@ -22,8 +22,9 @@ radius = 50.27
 [node name="Player" type="RigidBody2D" parent="." unique_id=1514733619]
 position = Vector2(89, 344)
 rotation = 1.5707964
-linear_velocity = Vector2(150, 0)
+linear_damp = 10.0
 script = ExtResource("1_0wfyh")
+forward_force = 600.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1907273118]
 shape = SubResource("CapsuleShape2D_sugp2")
