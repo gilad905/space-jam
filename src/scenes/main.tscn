@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://bptpuwsy0lsfh" path="res://assets/winning_image.jpg" id="6_tefeu"]
 [ext_resource type="Shape2D" uid="uid://32yvf74jr5qd" path="res://new_world_boundary_shape_2d.tres" id="7_o6xl0"]
 [ext_resource type="Script" uid="uid://cfsty6ws2codc" path="res://scripts/camera_2d.gd" id="10_choun"]
+[ext_resource type="AudioStream" uid="uid://du5mdwd8jqn5x" path="res://assets/audio/aud_explosion.ogg" id="11_eb6dy"]
+[ext_resource type="AudioStream" uid="uid://c6tqyrm4qaut3" path="res://assets/audio/aud_thrusterFire.ogg" id="11_ya4ey"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qw2ki"]
 radius = 50.27
@@ -114,6 +116,16 @@ visible = false
 position = Vector2(519.00006, 339.00003)
 scale = Vector2(0.41360545, 0.37142858)
 texture = ExtResource("6_tefeu")
+
+[node name="Sounds" type="Node2D" parent="." unique_id=1220822608]
+
+[node name="AudExplosion" type="AudioStreamPlayer" parent="Sounds" unique_id=1299265715]
+stream = ExtResource("11_eb6dy")
+
+[node name="AudThrusterFire" type="AudioStreamPlayer" parent="Sounds" unique_id=164486345]
+stream = ExtResource("11_ya4ey")
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="Goal" to="." method="_on_goal_body_entered"]
 [connection signal="body_entered" from="Player" to="Player" method="_on_body_entered"]
